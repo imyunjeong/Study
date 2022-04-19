@@ -1,5 +1,7 @@
 # 파이썬 코드 레시피 302
-표지: ![ex_screenshot](./img/screenshot.png)
+표지: ![ex_screenshot](./img/파이썬코드레시피302.jpg)
+
+
 
 읽은 기간: 2022-04-19 ~ 
 
