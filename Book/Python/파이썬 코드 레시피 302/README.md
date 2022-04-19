@@ -110,11 +110,11 @@ if __name__ == "__main__":
 ## 008. vevn로 가상환경 만들기
 - 가상 환경 구축     : `python -m venv {가상 환경 경로}`
 - 가상환경으로 전환
-  |함수|처리|예제|
-  |----|---|----|
-  |윈도우 명령 프롬프트(cmd)| 가상 환경 디렉터리에서 .\Scripts\activate.bat|venv\Scripts\activate.bat|
-  |윈도우 파워셸|가상 환경 디렉터리에서 ./Scripts/Activate.psl|venv/Scripts/Activate.psl|
-  |유닉스 계열|가상 환경 디렉터리에서 ./bin/activate를 source 명령어로 로딩|source venv/bin/activate|
+  |함수|구분|처리|예제|
+  |----|---|---|----|
+  |윈도우 명령 프롬프트(cmd)|`\`|가상환경 디렉터리에서 .\Scripts\activate.bat|**venv\Scripts\activate.bat**|
+  |윈도우 파워셸|`/`|가상환경 디렉터리에서 ./Scripts/Activate.psl|**venv/Scripts/Activate.psl**|
+  |유닉스 계열|`/`|가상환경 디렉터리에서 ./bin/activate를 source 명령어로 로딩|**source venv/bin/activate**|
 
 - 가상 환경 종료
   |함수|처리|예제|
