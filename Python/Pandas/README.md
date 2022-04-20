@@ -65,8 +65,31 @@ KeyError: 6
 - df.loc['a']     # equivalent to df.iloc[0]
 
 
+## 2. read_csv() 
+- read_csv() 사용 시 날짜를 datetime 형태로 불러오기
+- csv 의 특정 컬럼 중 날짜형태(yyyy-MM-dd hh:mi:ss) 로 표시되어 있어도 csv를 불러오면 object(string) 형태로 선언되어 있다.
+- 이전까지는 padnas.to_datetime 을 이용해서 형태를 바꿨는데 데이터가 1000만 건이상이 되면 변환해주는것도 시간이 꽤 소요된다.
+- 그래서 옵션을 추가해 처음 로드할때 부터 데이터타입을 맞추는게 더 효율적이다.
+- read_csv를 이용할때 옵션을 주면 datetime 형태로 로드가 가능하다
+```python
+>>> dt = pd.read_csv('sample2.csv')
+>>> dt.dtypes
+id     int64
+상품명  object
+구매일  object     # 아무런 옵션을 주지 않으면 위와 같이 구매일이 object 로 지정되어 있다.
+dtype: object
 
-  
+# 1) 이 상태에서 pd.to_datetime 를 이용해 날짜를 바꿀 수 있다.
+>>> df['구매일'] = pd.to_datetime(df['구매일'])
+>>> df.dtypes
+id     int64
+상품명  object
+구매일  datetime64[ns]
+dtype: object
+
+# 2) csv 파일을 로드할 때 parse_dates 옵션을 추가
+>>> df = pd.read_csv('sample2.csv', parse_dates=['구매일'])  # datetime 형태로 변경되어야 하는 컬럼명을 지정한다
+```
 
 
 ## 2. 결측값(None 또는 np.nan) 처리: `.dropna()`
