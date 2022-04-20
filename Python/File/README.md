@@ -28,3 +28,7 @@
 >>>     readJson = json.load(f)
 >>>     print(readJson)   #  {'id': '1000', 'language': {'first': 'korean', 'seconds': 'english'}, 'grade': 'A', 'name': 'honaldo'}
 ```
+
+
+- loads, dumps : s가 붙으면 json 문자열 관련
+- load, dump : 대상을 파싱해서 파이썬 객체(dict 등)로 변환
