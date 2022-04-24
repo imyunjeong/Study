@@ -6,7 +6,17 @@
 
 - all과 any는 **반복가능한 자료형(Iterable)을 인자로 받음**
 - Iterable 자료형: List, Tuple, Set, Dictionary, String (=for문에서 사용가능한 것들)
+- python에서 빈 값, 0, None은 False로 인식
 
+```python
+# all은 and 연산 : 조건 중 하나라도 틀리면 False
+>>> all([True, True, True])     # True
+>>> all([False, True, False])   # False
+
+# any는 or 연산 : 조건 중 하나라도 맞으면 True 반환
+>>> any([False, True, False])   # True
+>>> any([False, False, False])  # False
+```
 
 ## 1. all
 ```python
@@ -28,6 +38,7 @@ def all(iterable):
 >>> all([0,1,2,3,4])    # 리스트 요소에 False(0 == False)가 있는 경우: => False
 >>> all([])             # 리스트 요소가 빈 경우 => True
 >>> all(['a','',2,3])   # 리스트 요소에 빈 문자열이 있는 경우 => False
+>>> all([3,4,3,None])   # False
 ```
 
 
